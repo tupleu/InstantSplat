@@ -1,11 +1,12 @@
 #! /bin/bash
 
-GPU_ID=6
-DATA_ROOT_DIR="/ssd2/zhiwen/projects/InstantSplat/data"
+GPU_ID=0
+DATA_ROOT_DIR="C:/Users/asus/Documents/GitHub/InstantSplat/data"
 DATASETS=(
     # TT
-    sora
+    # sora
     # mars
+    trees
     )
 
 SCENES=(
@@ -14,14 +15,17 @@ SCENES=(
     # Francis
     # Horse
     # Ignatius
-    santorini
+    # santorini
+    tree1
     )
 
 N_VIEWS=(
-    3
+    # 3
     # 5
     # 9
     # 12
+    15
+    # 18
     )
 
 # increase iteration to get better metrics (e.g. gs_train_iter=5000)
@@ -67,10 +71,10 @@ for DATASET in "${DATASETS[@]}"; do
 
             echo "========= ${SCENE}: Dust3r_coarse_geometric_initialization ========="
             eval $CMD_D1
-            echo "========= ${SCENE}: Train: jointly optimize pose ========="
-            eval $CMD_T
-            echo "========= ${SCENE}: Render interpolated pose & output video ========="
-            eval $CMD_RI
+            # echo "========= ${SCENE}: Train: jointly optimize pose ========="
+            # eval $CMD_T
+            # echo "========= ${SCENE}: Render interpolated pose & output video ========="
+            # eval $CMD_RI
             done
         done
     done

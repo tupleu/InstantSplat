@@ -63,6 +63,7 @@ if __name__ == '__main__':
     #         print(src_path, tgt_path)
     #         shutil.copy(src_path, tgt_path)
     images, ori_size = load_images(img_folder_path, size=512)
+    print(images[0]['img'].shape)
     print("ori_size", ori_size)
 
     start_time = time.time()
